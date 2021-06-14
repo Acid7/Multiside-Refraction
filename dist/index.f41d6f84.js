@@ -587,7 +587,7 @@ class Scene {
   /*Camera*/
   setCamera() {
     this.camera = new _three.PerspectiveCamera(60, this.width / this.height, 0.1, 100);
-    this.camera.position.set(0, 0, 7);
+    this.camera.position.set(0, 0, 5);
     this.controls = new _threeExamplesJsmControlsOrbitControlsJs.OrbitControls(this.camera, this.renderer.domElement);
     this.controls.enableDamping = true;
   }
