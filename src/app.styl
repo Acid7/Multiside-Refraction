@@ -1,0 +1,57 @@
+html
+	height 100%
+	overflow hidden
+
+body
+	margin 0
+	height 100%
+	overflow auto
+	background-color #000
+
+#canvas
+	display block
+	position absolute
+	top 0
+	left 0
+
+// Nav
+
+nav
+	position absolute
+	z-index 1
+	top 1rem
+	left 1rem
+	a
+		display inline-block
+		color #eee
+		background-color rgba(47, 49, 55, 0.8)
+		padding .5rem
+		border-radius 50%
+		transition color .5s
+		svg
+			display inline-block
+			vertical-align middle
+			width 1.75rem
+			height 1.75rem
+		&:hover
+			color #ffcc00
+		&:not(:last-child)
+			margin-right .5rem
+
+@media (max-width: 414px)
+	nav
+		display none
+
+// Tweaks
+
+:root
+	--tp-base-background-color rgba(47, 49, 55, 0.8)
+
+.tp-rotv
+	font-size 12px !important
+.tp-dfwv
+	top 1rem !important
+	right 1rem !important
+	width auto !important
+.tp-lblv_v
+	width 200px !important

@@ -1,0 +1,26 @@
+{
+  "name": "multiside-refraction",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.html",
+  "targets": {
+    "main": false
+  },
+  "scripts": {
+    "clean": "rm -f dist/*",
+    "dev": "parcel src/index.html --open --no-source-maps",
+    "build": "rm -f dist/* && parcel build src/index.html --no-source-maps --no-scope-hoist"
+  },
+  "author": "Acid7",
+  "license": "MIT",
+  "dependencies": {
+    "three": "^0.128.0",
+    "tweakpane": "^3.0.2"
+  },
+  "devDependencies": {
+    "@parcel/transformer-glsl": "^2.0.0-beta.2",
+    "@parcel/transformer-image": "^2.0.0-beta.2",
+    "@parcel/transformer-stylus": "^2.0.0-beta.2",
+    "stylus": "^0.54.8"
+  }
+}
