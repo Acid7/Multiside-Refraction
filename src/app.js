@@ -27,9 +27,9 @@ const settings = {
 	geometry: 'icosahedron',
 	uColor: '#ffffff',
 	uRefractionRatio: 0.88,
-	uFresnelBias: 0.1,
-	uFresnelPower: 2.0,
-	uFresnelScale: 1.0,
+	uFresnelBias: 0.0,
+	uFresnelPower: 5.0,
+	uFresnelScale: 0.33,
 	uBackfaceVisibility: 0.33,
 }
 
