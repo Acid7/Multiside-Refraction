@@ -605,11 +605,6 @@ class Scene {
     const backMaterial = new _three.ShaderMaterial({
       vertexShader: _shadersBackfaceVertexGlslDefault.default,
       fragmentShader: _shadersBackfaceFragmentGlslDefault.default,
-      uniforms: {
-        tCube: {
-          value: this.cubemap
-        }
-      },
       side: _three.BackSide
     });
     this.backfaceMesh = new _three.Mesh(this.icosahedronGeometry, backMaterial);

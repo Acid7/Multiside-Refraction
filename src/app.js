@@ -166,9 +166,6 @@ class Scene {
 		const backMaterial = new THREE.ShaderMaterial({
 			vertexShader: backfaceVertexShader,
 			fragmentShader: backfaceFragmentShader,
-			uniforms: {
-				tCube: { value: this.cubemap },
-			},
 			side: THREE.BackSide
 		})
 
