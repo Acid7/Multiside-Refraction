@@ -1,4 +1,4 @@
-# Multiside Refraction Fresnel Shader
+# Multiside Refraction
 
 Modified Three.js fresnel shader for backfaces visibility.
 
