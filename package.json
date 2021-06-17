@@ -9,7 +9,7 @@
   "scripts": {
     "clean": "rm -f dist/*",
     "dev": "parcel src/index.html --open --no-source-maps",
-    "build": "rm -f dist/* && parcel build src/index.html --no-source-maps --no-scope-hoist"
+    "build": "rm -f dist/* && rm -rf .parcel-cache/* && parcel build src/index.html --no-source-maps --no-scope-hoist"
   },
   "author": "Acid7",
   "license": "MIT",

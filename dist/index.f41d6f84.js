@@ -670,7 +670,7 @@ class Scene {
 }
 const scene = new Scene();
 
-},{"three":"6mWZy","three/examples/jsm/controls/OrbitControls.js":"6Pcny","tweakpane":"CE7hu","./app.styl":"24A5v","./shaders/vertex.glsl":"3x4FW","./shaders/fragment.glsl":"36fJ0","./shaders/backfaceVertex.glsl":"3e8Kt","./shaders/backfaceFragment.glsl":"4Pf8M","three/examples/jsm/loaders/GLTFLoader.js":"1cQzk","url:./models/diamond.glb":"6hkIR","@parcel/transformer-js/lib/esmodule-helpers.js":"5UQZO","url:./cubemap/px.jpg":"2elS3","url:./cubemap/nx.jpg":"4xgqH","url:./cubemap/py.jpg":"4owU9","url:./cubemap/ny.jpg":"Q7Co2","url:./cubemap/pz.jpg":"1WcgQ","url:./cubemap/nz.jpg":"45Faq"}],"6mWZy":[function(require,module,exports) {
+},{"three":"6mWZy","three/examples/jsm/controls/OrbitControls.js":"6Pcny","tweakpane":"CE7hu","./app.styl":"24A5v","./shaders/vertex.glsl":"3x4FW","./shaders/fragment.glsl":"36fJ0","./shaders/backfaceVertex.glsl":"3e8Kt","./shaders/backfaceFragment.glsl":"4Pf8M","url:./cubemap/px.jpg":"2elS3","url:./cubemap/nx.jpg":"4xgqH","url:./cubemap/py.jpg":"4owU9","url:./cubemap/ny.jpg":"Q7Co2","url:./cubemap/pz.jpg":"1WcgQ","url:./cubemap/nz.jpg":"45Faq","three/examples/jsm/loaders/GLTFLoader.js":"1cQzk","url:./models/diamond.glb":"6hkIR","@parcel/transformer-js/lib/esmodule-helpers.js":"5UQZO"}],"6mWZy":[function(require,module,exports) {
 var define;
 /**
 * @license
@@ -37519,7 +37519,65 @@ module.exports="#define GLSLIFY 1\nuniform samplerCube tCube;\nuniform sampler2D
 module.exports="#define GLSLIFY 1\nvarying vec3 vWorldNormal;\n\nvoid main() {\n\n    vWorldNormal = (modelMatrix * vec4(normal, 0.0)).xyz;\n    vWorldNormal = -normalize(vec3(-vWorldNormal.x, vWorldNormal.yz));\n\n    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);\n\n}";
 },{}],"4Pf8M":[function(require,module,exports) {
 module.exports="#define GLSLIFY 1\nvarying vec3 vWorldNormal;\n\nvoid main() {\n\n    gl_FragColor.rgb = vWorldNormal;\n\n}";
-},{}],"1cQzk":[function(require,module,exports) {
+},{}],"2elS3":[function(require,module,exports) {
+module.exports = require('./bundle-url').getBundleURL() + "px.b4b5afb4.jpg"
+},{"./bundle-url":"1cq9z"}],"1cq9z":[function(require,module,exports) {
+"use strict";
+
+/* globals document:readonly */
+var bundleURL = null;
+
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
+  }
+
+  return bundleURL;
+}
+
+function getBundleURL() {
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
+
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+
+  return '/';
+}
+
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+
+
+function getOrigin(url) {
+  let matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
+
+  if (!matches) {
+    throw new Error('Origin not found');
+  }
+
+  return matches[0];
+}
+
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+},{}],"4xgqH":[function(require,module,exports) {
+module.exports = require('./bundle-url').getBundleURL() + "nx.7b813dce.jpg"
+},{"./bundle-url":"1cq9z"}],"4owU9":[function(require,module,exports) {
+module.exports = require('./bundle-url').getBundleURL() + "py.a82555b8.jpg"
+},{"./bundle-url":"1cq9z"}],"Q7Co2":[function(require,module,exports) {
+module.exports = require('./bundle-url').getBundleURL() + "ny.02d1da91.jpg"
+},{"./bundle-url":"1cq9z"}],"1WcgQ":[function(require,module,exports) {
+module.exports = require('./bundle-url').getBundleURL() + "pz.b70b23b3.jpg"
+},{"./bundle-url":"1cq9z"}],"45Faq":[function(require,module,exports) {
+module.exports = require('./bundle-url').getBundleURL() + "nz.01b230a4.jpg"
+},{"./bundle-url":"1cq9z"}],"1cQzk":[function(require,module,exports) {
 var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
 _parcelHelpers.defineInteropFlag(exports);
 _parcelHelpers.export(exports, "GLTFLoader", function () {
@@ -39869,63 +39927,5 @@ function toTrianglesDrawMode(geometry, drawMode) {
 
 },{"three":"6mWZy","@parcel/transformer-js/lib/esmodule-helpers.js":"5UQZO"}],"6hkIR":[function(require,module,exports) {
 module.exports = require('./bundle-url').getBundleURL() + "diamond.fbfa4ae9.glb"
-},{"./bundle-url":"1cq9z"}],"1cq9z":[function(require,module,exports) {
-"use strict";
-
-/* globals document:readonly */
-var bundleURL = null;
-
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
-}
-
-function getBundleURL() {
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
-} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-
-
-function getOrigin(url) {
-  let matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
-
-  if (!matches) {
-    throw new Error('Origin not found');
-  }
-
-  return matches[0];
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-},{}],"2elS3":[function(require,module,exports) {
-module.exports = require('./bundle-url').getBundleURL() + "px.b4b5afb4.jpg"
-},{"./bundle-url":"1cq9z"}],"4xgqH":[function(require,module,exports) {
-module.exports = require('./bundle-url').getBundleURL() + "nx.7b813dce.jpg"
-},{"./bundle-url":"1cq9z"}],"4owU9":[function(require,module,exports) {
-module.exports = require('./bundle-url').getBundleURL() + "py.a82555b8.jpg"
-},{"./bundle-url":"1cq9z"}],"Q7Co2":[function(require,module,exports) {
-module.exports = require('./bundle-url').getBundleURL() + "ny.02d1da91.jpg"
-},{"./bundle-url":"1cq9z"}],"1WcgQ":[function(require,module,exports) {
-module.exports = require('./bundle-url').getBundleURL() + "pz.b70b23b3.jpg"
-},{"./bundle-url":"1cq9z"}],"45Faq":[function(require,module,exports) {
-module.exports = require('./bundle-url').getBundleURL() + "nz.01b230a4.jpg"
 },{"./bundle-url":"1cq9z"}]},["5p3NQ","6geib"], "6geib", "parcelRequired4e6")
 
