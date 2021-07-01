@@ -3,13 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.html",
-  "targets": {
-    "main": false
-  },
   "scripts": {
-    "clean": "rm -f dist/*",
-    "dev": "parcel src/index.html --open --no-source-maps",
-    "build": "rm -f dist/* && rm -rf .parcel-cache/* && parcel build src/index.html --no-source-maps --no-scope-hoist"
+    "dev": "vite --host --open",
+    "build": "vite build",
+    "serve": "vite preview"
   },
   "author": "Acid7",
   "license": "MIT",
@@ -18,9 +15,7 @@
     "tweakpane": "^3.0.2"
   },
   "devDependencies": {
-    "@parcel/transformer-glsl": "^2.0.0-beta.2",
-    "@parcel/transformer-image": "^2.0.0-beta.2",
-    "@parcel/transformer-stylus": "^2.0.0-beta.2",
-    "stylus": "^0.54.8"
+    "stylus": "^0.54.8",
+    "vite": "^2.3.3"
   }
 }

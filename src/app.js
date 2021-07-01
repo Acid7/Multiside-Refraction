@@ -4,20 +4,20 @@ import { Pane } from 'tweakpane'
 
 import './app.styl'
 
-import vertexShader from './shaders/vertex.glsl'
-import fragmentShader from './shaders/fragment.glsl'
-import backfaceVertexShader from './shaders/backfaceVertex.glsl'
-import backfaceFragmentShader from './shaders/backfaceFragment.glsl'
+import vertexShader from './shaders/vertex.glsl?raw'
+import fragmentShader from './shaders/fragment.glsl?raw'
+import backfaceVertexShader from './shaders/backfaceVertex.glsl?raw'
+import backfaceFragmentShader from './shaders/backfaceFragment.glsl?raw'
 
-import cubemapPX from 'url:./cubemap/px.jpg'
-import cubemapNX from 'url:./cubemap/nx.jpg'
-import cubemapPY from 'url:./cubemap/py.jpg'
-import cubemapNY from 'url:./cubemap/ny.jpg'
-import cubemapPZ from 'url:./cubemap/pz.jpg'
-import cubemapNZ from 'url:./cubemap/nz.jpg'
+import cubemapPX from './cubemap/px.jpg?url'
+import cubemapNX from './cubemap/nx.jpg?url'
+import cubemapPY from './cubemap/py.jpg?url'
+import cubemapNY from './cubemap/ny.jpg?url'
+import cubemapPZ from './cubemap/pz.jpg?url'
+import cubemapNZ from './cubemap/nz.jpg?url'
 
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
-import model from 'url:./models/diamond.glb'
+import model from './models/diamond.glb?url'
 
 
 
