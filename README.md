@@ -7,6 +7,8 @@ Inspired by: Jesper Vos -
 
 [Demo](https://multiside-refraction.vercel.app)
 
+## Setup
+
 ```bash
 npm install
 
