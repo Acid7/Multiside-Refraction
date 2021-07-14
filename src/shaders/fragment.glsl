@@ -30,7 +30,7 @@ void main() {
 	vRefract[2] = refract(normalize(viewDirection), normal, uRefractionRatio * 0.98);
 
 	// Reflected Color
-	vec4 reflectedColor = textureCube(tCube, vec3(-vReflect.x, vReflect.yz));
+	vec4 reflectedColor = textureCube(tCube, vec3(-vReflect.x, vReflect.yz)) * vec4(5.0); // Add some white
 
 	// Refracted Color
 	vec4 refractedColor = vec4(1.0);

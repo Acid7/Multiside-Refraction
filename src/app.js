@@ -28,12 +28,12 @@ const settings = {
 	uColor: '#ffffff',
 	uRefractionRatio: 0.88,
 	uFresnelBias: 0.0,
-	uFresnelPower: 5.0,
+	uFresnelPower: 1.0,
 	uFresnelScale: 0.33,
 	uBackfaceVisibility: 0.33,
 }
 
-// Tweaks
+// Tweakpane
 
 const pane = new Pane()
 pane.addInput(settings, 'geometry', { label: 'Geometry', options: {
@@ -44,8 +44,8 @@ pane.addInput(settings, 'geometry', { label: 'Geometry', options: {
 pane.addInput(settings, 'uColor', { picker: 'inline' })
 pane.addInput(settings, 'uRefractionRatio', { min: 0, max: 1, step: 0.01 })
 pane.addInput(settings, 'uFresnelBias', { min: 0, max: 1, step: 0.01 })
-pane.addInput(settings, 'uFresnelPower', { min: 0, max: 5, step: 0.01 })
-pane.addInput(settings, 'uFresnelScale', { min: 0, max: 2, step: 0.01 })
+pane.addInput(settings, 'uFresnelPower', { min: 0, max: 1, step: 0.01 })
+pane.addInput(settings, 'uFresnelScale', { min: 0, max: 1, step: 0.01 })
 pane.addInput(settings, 'uBackfaceVisibility', { min: 0, max: 0.33, step: 0.01 })
 
 pane.on('change', (event) => {
@@ -71,11 +71,13 @@ class Scene {
 	constructor() {
 
 		// Dimensions
+
 		this.width = window.innerWidth
 		this.height = window.innerHeight
 		this.clock = new THREE.Clock()
 
 		// Init
+
 		this.setRenderer()
 		this.setBackground()
 		this.setCamera()
@@ -102,6 +104,7 @@ class Scene {
 		this.renderer.autoClear = false
 
 		// Backface Render Target
+
 		if (this.renderer.capabilities.isWebGL2) {
 			this.backfaceRenderTarget = new THREE.WebGLMultisampleRenderTarget(this.width, this.height, {
 				type: THREE.HalfFloatType
@@ -113,6 +116,7 @@ class Scene {
 		}
 
 		// Resize
+
 		window.addEventListener('resize', () => {
 			this.width = window.innerWidth
 			this.height = window.innerHeight
@@ -163,6 +167,7 @@ class Scene {
 		})
 
 		//  Backface Material
+
 		const backMaterial = new THREE.ShaderMaterial({
 			vertexShader: backfaceVertexShader,
 			fragmentShader: backfaceFragmentShader,
@@ -173,6 +178,7 @@ class Scene {
 		this.backfaceScene.add(this.backfaceMesh)
 
 		// Material
+
 		const material = new THREE.ShaderMaterial({
 			vertexShader,
 			fragmentShader,
@@ -206,6 +212,7 @@ class Scene {
 		this.controls.update()
 
 		// Update uniforms
+
 		this.mesh.material.uniforms.uColor.value = new THREE.Color(settings.uColor)
 		this.mesh.material.uniforms.uRefractionRatio.value = settings.uRefractionRatio
 		this.mesh.material.uniforms.uFresnelBias.value = settings.uFresnelBias
