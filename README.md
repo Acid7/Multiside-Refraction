@@ -12,9 +12,9 @@ Inspired by: Jesper Vos -
 ## Setup
 
 ```bash
-npm install
+yarn install
 
-npm run dev
+yarn dev
 
-npm run build
+yarn build
 ```
