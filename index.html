@@ -4,8 +4,39 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Multiside Refraction</title>
+	<style>
+		body {
+			background-color: #000;
+		}
+		nav {
+			position: absolute;
+			z-index: 1;
+			top: 1rem;
+			left: 1rem;
+		}
+		nav	a {
+			display: inline-block;
+			color: #eee;
+			background-color: rgba(47, 49, 55, 0.8);
+			padding: .5rem;
+			border-radius: 50%;
+			transition: color .5s;
+		}
+		nav a svg {
+			display: inline-block;
+			vertical-align: middle;
+			width: 1.75rem;
+			height: 1.75rem;
+		}
+		nav a svg:hover {
+			color: #ffcc00;
+		}
+		nav a:not(:last-child) {
+			margin-right: .5rem;
+		}
+	</style>
 </head>
-<body style="background-color: #000;">
+<body>
 	<nav>
 		<a href="https://acid7.studio/lab.html">
 			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"

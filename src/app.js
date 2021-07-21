@@ -106,13 +106,9 @@ class Scene {
 		// Backface Render Target
 
 		if (this.renderer.capabilities.isWebGL2) {
-			this.backfaceRenderTarget = new THREE.WebGLMultisampleRenderTarget(this.width, this.height, {
-				type: THREE.HalfFloatType
-			})
+			this.backfaceRenderTarget = new THREE.WebGLMultisampleRenderTarget(this.width, this.height)
 		} else {
-			this.backfaceRenderTarget = new THREE.WebGLRenderTarget(this.width, this.height, {
-				type: THREE.HalfFloatType,
-			})
+			this.backfaceRenderTarget = new THREE.WebGLRenderTarget(this.width, this.height)
 		}
 
 		// Resize
