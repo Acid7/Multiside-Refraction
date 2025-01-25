@@ -12,6 +12,6 @@
   },
   "devDependencies": {
     "stylus": "^0.54.8",
-    "vite": "^2.3.3"
+    "vite": "^6.0.11"
   }
 }
