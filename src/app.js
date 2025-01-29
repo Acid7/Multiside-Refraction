@@ -49,17 +49,15 @@ pane.addBinding(settings, 'uFresnelScale', { min: 0, max: 1, step: 0.01 })
 pane.addBinding(settings, 'uBackfaceVisibility', { min: 0, max: 0.33, step: 0.01 })
 
 pane.on('change', (event) => {
-	if (event.presetKey === 'geometry') {
-		if (event.value === 'icosahedron') {
-			scene.mesh.geometry = scene.icosahedronGeometry
-			scene.backfaceMesh.geometry = scene.icosahedronGeometry
-		} else if (event.value === 'box') {
-			scene.mesh.geometry = scene.boxGeometry
-			scene.backfaceMesh.geometry = scene.boxGeometry
-		} else if (event.value === 'diamond') {
-			scene.mesh.geometry = scene.diamondGeometry
-			scene.backfaceMesh.geometry = scene.diamondGeometry
-		}
+	if (event.value === 'icosahedron') {
+		scene.mesh.geometry = scene.icosahedronGeometry
+		scene.backfaceMesh.geometry = scene.icosahedronGeometry
+	} else if (event.value === 'box') {
+		scene.mesh.geometry = scene.boxGeometry
+		scene.backfaceMesh.geometry = scene.boxGeometry
+	} else if (event.value === 'diamond') {
+		scene.mesh.geometry = scene.diamondGeometry
+		scene.backfaceMesh.geometry = scene.diamondGeometry
 	}
 })
 
