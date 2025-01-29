@@ -36,17 +36,17 @@ const settings = {
 // Tweakpane
 
 const pane = new Pane()
-pane.addInput(settings, 'geometry', { label: 'Geometry', options: {
+pane.addBinding(settings, 'geometry', { label: 'Geometry', options: {
 	Icosahedron: 'icosahedron',
 	Box: 'box',
 	Diamond: 'diamond',
 }})
-pane.addInput(settings, 'uColor', { picker: 'inline' })
-pane.addInput(settings, 'uRefractionRatio', { min: 0, max: 1, step: 0.01 })
-pane.addInput(settings, 'uFresnelBias', { min: 0, max: 1, step: 0.01 })
-pane.addInput(settings, 'uFresnelPower', { min: 0, max: 1, step: 0.01 })
-pane.addInput(settings, 'uFresnelScale', { min: 0, max: 1, step: 0.01 })
-pane.addInput(settings, 'uBackfaceVisibility', { min: 0, max: 0.33, step: 0.01 })
+pane.addBinding(settings, 'uColor', { picker: 'inline' })
+pane.addBinding(settings, 'uRefractionRatio', { min: 0, max: 1, step: 0.01 })
+pane.addBinding(settings, 'uFresnelBias', { min: 0, max: 1, step: 0.01 })
+pane.addBinding(settings, 'uFresnelPower', { min: 0, max: 1, step: 0.01 })
+pane.addBinding(settings, 'uFresnelScale', { min: 0, max: 1, step: 0.01 })
+pane.addBinding(settings, 'uBackfaceVisibility', { min: 0, max: 0.33, step: 0.01 })
 
 pane.on('change', (event) => {
 	if (event.presetKey === 'geometry') {
